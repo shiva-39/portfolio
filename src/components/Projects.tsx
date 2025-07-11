@@ -1,39 +1,38 @@
-
 import { Github, ArrowUp } from 'lucide-react';
 
 const Projects = () => {
   const projects = [
     {
-      title: "E-Commerce Platform",
-      description: "Full-stack e-commerce solution with React, Node.js, and MongoDB. Features include user authentication, payment processing, and admin dashboard.",
-      techStack: ["React", "Node.js", "MongoDB", "Stripe API", "Tailwind CSS"],
-      image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=500&h=300&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "AbleHire – Inclusive Hiring Platform",
+      description: "An AI-powered job search platform with voice search and chatbot. Optimized backend with MongoDB and AWS for scalable, cost-effective data storage.",
+      techStack: ["React", "Node.js", "MongoDB", "AWS", "AI/ML"],
+      image: "public/ablehireimg.jpeg",
+      demoUrl: "https://able-hire.vercel.app/",
+      githubUrl: "https://github.com/shiva-39/AbleHire"
     },
     {
-      title: "Task Management App",
-      description: "Collaborative task management application with real-time updates, drag-and-drop functionality, and team collaboration features.",
-      techStack: ["React", "TypeScript", "Firebase", "Material-UI"],
-      image: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?w=500&h=300&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "AVA Connect – Welfare Platform",
+      description: "A full-stack React and Express system to register 100+ artisans. Features IVR/DTMF integration for inclusive, fault-tolerant reporting and emergency alert broadcasts.",
+      techStack: ["React", "Express", "Node.js", "MongoDB", "IVR", "AWS"],
+      image: "avalogo.jpeg",
+      demoUrl: "",
+      githubUrl: "https://github.com/shiva-39/AVA_CREATIONS"
     },
     {
-      title: "Weather Dashboard",
-      description: "Interactive weather dashboard with location-based forecasts, data visualization, and responsive design for all devices.",
-      techStack: ["Vue.js", "Chart.js", "OpenWeather API", "CSS3"],
-      image: "https://images.unsplash.com/photo-1504608524841-42fe6f032b4b?w=500&h=300&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "TripTogether – Real-Time Location Sharing App",
+      description: "A secure, real-time location-sharing app using Firebase and Google Maps API. Supports 100+ users with event-driven architecture and low-latency SOS alerts.",
+      techStack: ["React", "Firebase", "Google Maps API", "Node.js"],
+      image: "trip.jpeg",
+      demoUrl: "",
+      githubUrl: "https://github.com/shiva-39/TripTogether"
     },
     {
-      title: "Social Media Analytics",
-      description: "Analytics dashboard for social media metrics with data visualization, reporting features, and automated insights generation.",
-      techStack: ["Angular", "D3.js", "Python", "PostgreSQL"],
-      image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=500&h=300&fit=crop",
-      demoUrl: "#",
-      githubUrl: "#"
+      title: "Smile Genie – AI-based Facial Expression Analysis",
+      description: "An AI-powered research project using real-time facial expression analysis to enhance user experience. Applied machine learning models for emotion detection and user feedback.",
+      techStack: ["React", "Node.js", "Python", "Machine Learning", "AI"],
+      image: "smile.jpeg",
+      demoUrl: "",
+      githubUrl: "https://github.com/shiva-39?tab=repositories"
     }
   ];
 
@@ -46,7 +45,7 @@ const Projects = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-sky-500 mx-auto mb-6"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            A showcase of my recent work and the technologies I've used to bring ideas to life
+            A showcase of my real-world projects designed to deliver secure, scalable, and customer-focused solutions.
           </p>
         </div>
 
@@ -75,13 +74,15 @@ const Projects = () => {
                 </div>
                 
                 <div className="flex space-x-4">
-                  <a 
-                    href={project.demoUrl}
-                    className="flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
-                  >
-                    <ArrowUp className="rotate-45" size={16} />
-                    <span>Live Demo</span>
-                  </a>
+                  {project.demoUrl && (
+                    <a 
+                      href={project.demoUrl}
+                      className="flex items-center space-x-2 bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white px-4 py-2 rounded-lg font-medium transition-all duration-200 transform hover:scale-105"
+                    >
+                      <ArrowUp className="rotate-45" size={16} />
+                      <span>Live Demo</span>
+                    </a>
+                  )}
                   <a 
                     href={project.githubUrl}
                     className="flex items-center space-x-2 border-2 border-slate-300 hover:border-slate-400 text-slate-700 hover:text-slate-900 px-4 py-2 rounded-lg font-medium transition-all duration-200"

@@ -1,37 +1,38 @@
-
 const Skills = () => {
   const skillCategories = [
     {
-      title: "Frontend",
+      title: "Frontend & Web Development",
       skills: [
-        { name: "HTML5", level: 95 },
-        { name: "CSS3", level: 90 },
-        { name: "JavaScript", level: 92 },
-        { name: "React", level: 88 },
-        { name: "TypeScript", level: 85 },
-        { name: "Tailwind CSS", level: 90 }
+        { name: "React", level: 90 },
+        { name: "HTML", level: 90 },
+        { name: "CSS", level: 88 },
+        { name: "JavaScript", level: 88 },
+        { name: "React", level: 85 },
+        { name: "REST APIs", level: 85 }
       ]
     },
     {
-      title: "Backend",
+      title: "Backend & Cloud",
       skills: [
-        { name: "Node.js", level: 87 },
-        { name: "Express.js", level: 85 },
-        { name: "MongoDB", level: 82 },
-        { name: "PostgreSQL", level: 80 },
-        { name: "REST APIs", level: 90 },
-        { name: "GraphQL", level: 75 }
+        { name: "Node.js", level: 85 },
+        { name: "Express", level: 83 },
+        { name: "MongoDB", level: 80 },
+        { name: "SQL", level: 78 },
+        { name: "AWS", level: 80 },
+        { name: "Google Cloud", level: 78 },
+        { name: "Firebase", level: 80 }
       ]
     },
     {
-      title: "Tools & Technologies",
+      title: "Core CS & Other Skills",
       skills: [
-        { name: "Git", level: 92 },
-        { name: "Docker", level: 78 },
-        { name: "AWS", level: 75 },
-        { name: "Jest", level: 80 },
-        { name: "Webpack", level: 85 },
-        { name: "Linux", level: 82 }
+        { name: "Data Structures & Algorithms", level: 90 },
+        { name: "Object-Oriented Design", level: 88 },
+        { name: "Operating Systems", level: 85 },
+        { name: "Application Security", level: 80 },
+        { name: "CI/CD", level: 82 },
+        { name: "Git / GitHub", level: 90 },
+        { name: "Problem Solving", level: 88 }
       ]
     }
   ];
@@ -45,7 +46,7 @@ const Skills = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-sky-500 mx-auto mb-6"></div>
           <p className="text-xl text-slate-600 max-w-3xl mx-auto">
-            A comprehensive toolkit of modern technologies and frameworks I use to build robust applications
+            A comprehensive toolkit of modern technologies, frameworks, and computer science concepts I use to build secure, scalable, and customer-focused solutions.
           </p>
         </div>
 

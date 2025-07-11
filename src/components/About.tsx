@@ -1,11 +1,13 @@
+import shivaPhoto from '/public/SHIVA_IMG.jpeg';
 
 const About = () => {
   const highlights = [
-    "3+ Years of Development Experience",
-    "10+ Successful Projects Delivered",
-    "Full-Stack Expertise",
-    "Agile & Team Collaboration",
-    "Continuous Learning Mindset"
+    "Final-year B.Tech CSE student with a 9.1 GPA",
+    "Strong in Data Structures, Algorithms, and OOP",
+    "Proficient in Python, Java, JavaScript, SQL, and MERN stack",
+    "Experienced in scalable systems using AWS, Firebase",
+    "Practiced in CI/CD and Agile methodologies",
+    "Built inclusive apps serving 100+ users"
   ];
 
   return (
@@ -20,9 +22,13 @@ const About = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           <div className="space-y-6">
-            <div className="bg-gradient-to-br from-emerald-500 to-sky-500 p-1 rounded-2xl w-80 h-80 mx-auto lg:mx-0">
-              <div className="bg-slate-200 rounded-xl w-full h-full flex items-center justify-center">
-                <span className="text-slate-600 text-lg">Your Photo Here</span>
+            <div className="bg-gradient-to-br from-emerald-500 to-sky-500 p-1 rounded-2xl w-80 h-80 mx-auto lg:mx-0 overflow-hidden">
+              <div className="bg-slate-200 rounded-xl w-full h-full flex items-center justify-center overflow-hidden">
+                <img 
+                  src={shivaPhoto} 
+                  alt="Shiva Prasad Neela" 
+                  className="object-cover w-full h-full rounded-xl"
+                />
               </div>
             </div>
           </div>
@@ -30,16 +36,8 @@ const About = () => {
           <div className="space-y-6">
             <div className="prose prose-lg text-slate-700">
               <p className="text-xl leading-relaxed">
-                Hello! I'm a passionate Full-Stack Developer with a love for creating 
-                innovative web applications that solve real-world problems. My journey 
-                in development started with curiosity and has evolved into a career 
-                focused on clean, efficient code and exceptional user experiences.
-              </p>
-              <p className="text-lg leading-relaxed">
-                I specialize in modern web technologies and enjoy working across the 
-                entire development stack. When I'm not coding, you'll find me exploring 
-                new technologies, contributing to open-source projects, or sharing 
-                knowledge with the developer community.
+                Hi, I'm Shiva Prasad Neela, a final-year Computer Science student at GRIET with a 9.1 GPA. I build secure, scalable, and user-focused web applications using the MERN stack, AWS, and Firebase.
+                I have a strong foundation in data structures, algorithms, and object-oriented design, and I apply Agile and CI/CD practices to deliver high-quality software. My projects serve 100+ users and focus on inclusive, impactful design.
               </p>
             </div>
 

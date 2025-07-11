@@ -1,34 +1,45 @@
-
 import { ArrowDown } from 'lucide-react';
 
 const Resume = () => {
   const experiences = [
     {
-      title: "Senior Full-Stack Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
-      description: "Lead development of scalable web applications using React, Node.js, and cloud technologies."
+      title: "Participant – Code for Good Hackathon",
+      company: "JPMorgan Chase & Co.",
+      period: "June 2025",
+      description: "Collaborated in an Agile team to prototype a social impact solution using React, Node.js, and MongoDB. Delivered a functional demo to JPMorgan mentors, selected from 50,000+ applicants."
     },
     {
-      title: "Frontend Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      description: "Developed responsive user interfaces and improved application performance by 40%."
+      title: "Project Lead – Smile Genie",
+      company: "Independent Research Project",
+      period: "May 2024 – Aug 2024",
+      description: "Led an AI-based real-time facial expression analysis project using machine learning to enhance user experience through emotion detection and feedback systems."
     },
     {
-      title: "Junior Developer",
-      company: "StartUp Ventures",
-      period: "2019 - 2020",
-      description: "Built and maintained web applications while learning modern development practices."
+      title: "Knowledge Lead – Advanced Academic Center (AAC)",
+      company: "GRIET",
+      period: "Mar 2024 – Present",
+      description: "Conducted peer-led knowledge sessions on cutting-edge technologies and encouraged collaborative technical learning in academic settings."
     }
   ];
 
   const education = [
     {
-      degree: "Bachelor of Computer Science",
-      school: "University of Technology",
-      period: "2015 - 2019",
-      description: "Graduated with honors, focused on software engineering and web development."
+      degree: "B.Tech, Computer Science and Engineering",
+      school: "Gokaraju Rangaraju Institute of Engineering and Technology, Hyderabad",
+      period: "2022 – Present",
+      description: "Current GPA: 9.1. Focused on data structures, algorithms, object-oriented programming, and distributed systems."
+    },
+    {
+      degree: "Intermediate (MPC)",
+      school: "Narayana Junior College, Hyderabad",
+      period: "2020 – 2022",
+      description: "Percentage: 97.7%. Emphasized Mathematics, Physics, and Chemistry."
+    },
+    {
+      degree: "High School (CBSE)",
+      school: "Genius High School, Bhongir",
+      period: "2015 – 2020",
+      description: "Percentage: 87.8%. Developed strong fundamentals in STEM."
     }
   ];
 
@@ -43,10 +54,10 @@ const Resume = () => {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             My professional journey and educational background
           </p>
-          <button className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
+          <a href="/SHIVA_Resume.pdf" download className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
             <ArrowDown size={20} />
             <span>Download Resume</span>
-          </button>
+          </a>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">

@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 import { Mail, Linkedin, Github } from 'lucide-react';
 
@@ -9,17 +8,16 @@ const Contact = () => {
     message: ''
   });
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (e) => {
     setFormData({
       ...formData,
       [e.target.name]: e.target.value
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     console.log('Form submitted:', formData);
-    // Handle form submission here
     alert('Thank you for your message! I\'ll get back to you soon.');
     setFormData({ name: '', email: '', message: '' });
   };
@@ -33,7 +31,7 @@ const Contact = () => {
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-sky-500 mx-auto mb-6"></div>
           <p className="text-xl text-slate-300 max-w-3xl mx-auto">
-            I'm always open to discussing new opportunities and interesting projects
+            I'm always open to discussing new opportunities, collaborations, or sharing knowledge. Feel free to reach out!
           </p>
         </div>
 
@@ -42,8 +40,7 @@ const Contact = () => {
           <div className="space-y-8">
             <h3 className="text-3xl font-bold mb-6">Let's Connect</h3>
             <p className="text-lg text-slate-300 leading-relaxed">
-              Whether you have a project in mind, want to collaborate, or just want to say hello, 
-              I'd love to hear from you. Feel free to reach out through any of the channels below.
+              You can contact me for software engineering roles, collaborative projects, or any tech-related queries. Let's connect and build impactful solutions together!
             </p>
             
             <div className="space-y-6">
@@ -53,8 +50,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-slate-300">Email</p>
-                  <a href="mailto:your.email@example.com" className="text-white hover:text-emerald-400 transition-colors">
-                    your.email@example.com
+                  <a href="mailto:shivaprasad392005@gmail.com" className="text-white hover:text-emerald-400 transition-colors">
+                    shivaprasad392005@gmail.com
                   </a>
                 </div>
               </div>
@@ -65,8 +62,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-slate-300">LinkedIn</p>
-                  <a href="https://linkedin.com/in/yourprofile" className="text-white hover:text-emerald-400 transition-colors">
-                    linkedin.com/in/yourprofile
+                  <a href="https://www.linkedin.com/in/shivaprasad9" className="text-white hover:text-emerald-400 transition-colors">
+                    linkedin.com/in/shiva-prasad-neela
                   </a>
                 </div>
               </div>
@@ -77,8 +74,8 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-slate-300">GitHub</p>
-                  <a href="https://github.com/yourusername" className="text-white hover:text-emerald-400 transition-colors">
-                    github.com/yourusername
+                  <a href="https://github.com/shiva-39" className="text-white hover:text-emerald-400 transition-colors">
+                    github.com/shiva-39
                   </a>
                 </div>
               </div>
@@ -101,7 +98,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white"
-                  placeholder="John Doe"
+                  placeholder="Your Name"
                 />
               </div>
               
@@ -117,7 +114,7 @@ const Contact = () => {
                   onChange={handleChange}
                   required
                   className="w-full px-4 py-3 bg-slate-700 border border-slate-600 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent text-white"
-                  placeholder="john@example.com"
+                  placeholder="your.email@example.com"
                 />
               </div>
               
