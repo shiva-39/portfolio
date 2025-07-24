@@ -1,73 +1,134 @@
-# Welcome to your Lovable project
+##  Entity Relationships
 
-## Project info
+This section describes the database schema and relationships designed for the **Schedula Doctor Appointment Booking System**. The model is designed to support robust scheduling, patient management, and doctor–patient communication.
 
-**URL**: https://lovable.dev/projects/ccf8b823-e662-4e1d-bc15-c0842eccf094
+---
 
-## How can I edit this code?
+###  users
+Holds authentication and role data for all system users.
 
-There are several ways of editing your application.
+**Fields:**
+- id (PK)
+- email
+- password_hash
+- role *(patient | doctor | admin)*
+- full_name
+- created_at
+- updated_at
 
-**Use Lovable**
+---
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/ccf8b823-e662-4e1d-bc15-c0842eccf094) and start prompting.
+### doctors
+Extends user with doctor-specific profile information.
 
-Changes made via Lovable will be committed automatically to this repo.
+**Fields:**
+- id (PK)
+- user_id (FK → users.id)
+- specialty
+- bio
+- profile_image
+- rating
+- created_at
+- updated_at
 
-**Use your preferred IDE**
+**Relationship:**
+- 1-to-1 with **users**
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+---
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
+###  patients
+Represents patient records that belong to a user (e.g., a parent managing dependents).
 
-Follow these steps:
+**Fields:**
+- id (PK)
+- user_id (FK → users.id)
+- name
+- age
+- gender
+- medical_notes
+- created_at
+- updated_at
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+**Relationship:**
+- Many **patients** per **user** (1:M)
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+---
 
-# Step 3: Install the necessary dependencies.
-npm i
+###  availability_slots
+Defines available time slots for doctor appointments.
 
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
+**Fields:**
+- id (PK)
+- doctor_id (FK → doctors.id)
+- date
+- time
+- is_booked
+- created_at
+- updated_at
 
-**Edit a file directly in GitHub**
+**Relationship:**
+- Many **availability_slots** per **doctor** (1:M)
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+---
 
-**Use GitHub Codespaces**
+###  appointments
+Represents scheduled appointments between patients and doctors.
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+**Fields:**
+- id (PK)
+- patient_id (FK → patients.id)
+- doctor_id (FK → doctors.id)
+- scheduled_time
+- status *(confirmed | cancelled | rescheduled)*
+- notes
+- created_at
+- updated_at
 
-## What technologies are used for this project?
+**Relationships:**
+- Many **appointments** per **doctor** (1:M)
+- Many **appointments** per **patient** (1:M)
 
-This project is built with:
+---
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+###  appointment_history
+Tracks reschedules or changes to appointment timing.
 
-## How can I deploy this project?
+**Fields:**
+- id (PK)
+- appointment_id (FK → appointments.id)
+- previous_time
+- new_time
+- changed_by *(user id)*
+- change_reason
+- created_at
 
-Simply open [Lovable](https://lovable.dev/projects/ccf8b823-e662-4e1d-bc15-c0842eccf094) and click on Share -> Publish.
+**Relationship:**
+- Many **appointment_history** entries per **appointment** (1:M)
 
-## Can I connect a custom domain to my Lovable project?
+---
 
-Yes, you can!
+###  chat_messages
+Enables patient–doctor messaging within the app.
 
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
+**Fields:**
+- id (PK)
+- sender_id (FK → users.id)
+- receiver_id (FK → users.id)
+- message
+- sent_at
 
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+**Relationships:**
+- Many **chat_messages** sent by a **user** (1:M)
+- Many **chat_messages** received by a **user** (1:M)
+
+---
+
+###  Summary of Relationships
+- users **1 ↔ 1** doctors
+- users **1 ↔ M** patients
+- doctors **1 ↔ M** availability_slots
+- doctors **1 ↔ M** appointments
+- patients **1 ↔ M** appointments
+- appointments **1 ↔ M** appointment_history
+- users **1 ↔ M** chat_messages (as sender)
+- users **1 ↔ M** chat_messages (as receiver)

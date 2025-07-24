@@ -45,7 +45,7 @@ const Resume = () => {
             Resume
           </h2>
           <div className="w-24 h-1 bg-gradient-to-r from-emerald-500 to-sky-500 mx-auto mb-6"></div>
-          <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
+                    <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             My professional journey and educational background
           </p>
           <a href="/Shiva's_Resume.pdf" download className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
