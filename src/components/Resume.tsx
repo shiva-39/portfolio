@@ -3,12 +3,6 @@ import { ArrowDown } from 'lucide-react';
 const Resume = () => {
   const experiences = [
     {
-      title: "Participant – Code for Good Hackathon",
-      company: "JPMorgan Chase & Co.",
-      period: "June 2025",
-      description: "Collaborated in an Agile team to prototype a social impact solution using React, Node.js, and MongoDB. Delivered a functional demo to JPMorgan mentors, selected from 50,000+ applicants."
-    },
-    {
       title: "Project Lead – Smile Genie",
       company: "Independent Research Project",
       period: "May 2024 – Aug 2024",
@@ -54,7 +48,7 @@ const Resume = () => {
           <p className="text-xl text-slate-600 max-w-3xl mx-auto mb-8">
             My professional journey and educational background
           </p>
-          <a href="/SHIVA_Resume.pdf" download className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
+          <a href="/Shiva's_Resume.pdf" download className="bg-gradient-to-r from-emerald-500 to-sky-500 hover:from-emerald-600 hover:to-sky-600 text-white font-semibold py-3 px-6 rounded-lg text-lg transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl inline-flex items-center space-x-2">
             <ArrowDown size={20} />
             <span>Download Resume</span>
           </a>
